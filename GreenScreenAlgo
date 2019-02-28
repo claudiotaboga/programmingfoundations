@@ -1,0 +1,29 @@
+// start with foreground image you want (fgImage)
+var fgImage = new SimpleImage("drewRobert.png");
+
+//...and the background image you want (bgImage)
+var bgImage = new SimpleImage("dinos.png");
+
+// make a  blank image of the same size
+var output = new SimpleImage(fgImage.getWidth(),fgImage.getHeight());
+
+// For each pixel in fgImage
+for (var pixel of fgImage.values()){
+    //Look at current pixel and if it is green
+    if (pixel.getGreen()>pixel.getRed()+pixel.getBlue()){
+        //Look at the same position in bgImage
+        var x=pixel.getX();
+        var y=pixel.getY();
+        var bgPixel=bgImage.getPixel(x,y);
+           //and set output's corresponding pixel to bgImage pixel
+        output.setPixel(x,y,bgPixel);
+    }
+        
+     
+    //otherwise set utput's corresponding pixel to current pixel
+    else {
+        output.setPixel(pixel.getX(),pixel.getY(),pixel)
+    }
+}
+//show your answer
+print(output);
