@@ -1,0 +1,34 @@
+//add Border to image
+function setblack (pixel){
+    pixel.setRed(0);
+    pixel.setGreen(0);
+    pixel.setBlue(0);
+    return pixel;
+}
+
+function addBorder(image,s){
+    var A=image.getWidth();
+    var B=image.getHeight();
+    for (var pixel of image.values()){
+        var x=pixel.getX();
+        var y=pixel.getY();
+            
+        if (x<s || x>(A-s) || y<s || y>(B-s) ) {
+       
+       
+        output.setPixel(x,y,setblack(pixel)); 
+        }
+        else{
+        
+        output.setPixel(x,y,pixel); 
+        }
+}
+return output;
+}
+
+var image = new SimpleImage("drewRobert.png");
+
+var output = new SimpleImage(image.getWidth(),image.getHeight());
+var s=40;
+output=addBorder(image,s);
+print(output);
