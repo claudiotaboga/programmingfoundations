@@ -1,0 +1,38 @@
+HTML
+
+<html>
+
+<head>
+</head>
+
+<body>
+  <div id="d1">Hello</div>
+  <div id="d2">Goodbye</div>
+  <p>
+    <input type="button" value="color change" onclick="changecolor()">
+  </p>
+</body>
+
+</html>
+
+CSS
+
+#d1 {color:green;}
+
+.blueback{
+  background-color:lightblue;
+}
+.yellowback{
+  background-color:yellow;
+}
+
+JS
+
+function changecolor()
+{
+  var dd1=document.getElementById("d1");
+  var dd2=document.getElementById("d2");
+  
+  dd1.className="blueback";
+  dd2.className="yellowback";
+}
