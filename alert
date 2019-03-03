@@ -1,0 +1,44 @@
+HTML
+
+<html>
+
+<head>
+</head>
+
+<body>
+  <h1>Prova CSS</h1>
+  <div id="div1">This is div1</div>
+  <div id="div2">This is div2</div>
+  <input type = "button"
+       value = "confirm"
+       onclick = "ok()">
+</body>
+
+</html>
+
+
+CSS
+
+h1{
+  font-family:arial;
+  color:blue;
+}
+#div1{
+  font-family:arial;
+  background-color:green;
+}
+
+
+JS
+
+function ok(){
+var txt;
+var r = confirm("Press a button!");
+if (r == true) {
+  txt = "You pressed OK!";
+  alert(txt);
+} else {
+  txt = "You pressed Cancel!";
+  alert(txt);
+}
+}
